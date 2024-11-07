@@ -1,0 +1,23 @@
+Alter table klienci add column auto varchar(255);
+Alter table klienci add column data date first;
+Alter table klienci add column ksywka text after NazwiskoKlienta;
+Alter table klienci drop column auto;
+Alter table klienci change column ksywka haslo varchar(60);
+Alter table klienci change column haslo haslo text;
+UPDATE klienci set ImieKlienta = "Andrzej",NazwiskoKlienta = "Duda" where Kraj="Polska" and IdKlienta = "1";
+UPDATE klienci set data = "2024.11.07" where IdKlienta = 8;
+delete from klienci where kraj="Niemcy";
+delete from klienci where NazwiskoKlienta like '%d%';select * from klienci where data is not null ORDER by data;
+
+
+SELECT * FROM `floryda` WHERE `Imie` LIKE '%a%'
+UNION
+SELECT * FROM `krzykpterodaktyla` WHERE `Imie` LIKE '%a%'
+UNION
+SELECT * FROM `realmadryt` WHERE `Imie` LIKE '%a%';
+
+SELECT * FROM `floryda` WHERE `nazwisko` BETWEEN '%d%' and '%k%'
+UNION
+SELECT * FROM `krzykpterodaktyla` WHERE `nazwisko` BETWEEN '%d%' and '%k%'
+UNION
+SELECT * FROM `realmadryt` WHERE `nazwisko` BETWEEN '%d%' and '%k';
