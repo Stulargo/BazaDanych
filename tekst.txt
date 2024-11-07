@@ -1,0 +1,11 @@
+SELECT DISTINCT(COUNT(Kraj))
+
+
+SELECT * FROM `klienci` WHERE Kraj IN ("Polska","Niemcy", "Francja") AND Imieklienta LIKE "%a%" OR Imieklienta LIKE "%b" OR Imieklienta 
+LIKE "%c%" OR Imieklienta LIKE "%f%" OR Imieklienta LIKE "%g%" AND Kraj LIKE "%a%" OR Kraj LIKE "%b%" OR Kraj LIKE "%p%" OR Kraj LIKE "%w%" ORDER BY Imieklienta DESC;
+
+SELECT * FROM `klienci` WHERE IdKlienta BETWEEN 2 and 11 and Kraj NOT LIKE("Niemcy") AND Nazwiskoklienta not LIKE "%w%";
+
+SELECT IdKlienta, Imieklienta, NazwiskoKlienta FROM `klienci` where Miasto like "__r%";
+
+SELECT * FROM `klienci` WHERE ImieKlienta BETWEEN "a" and "m" and Kraj not LIKE("Niemcy") ORDER BY IdKlienta DESC;
