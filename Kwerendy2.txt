@@ -1,0 +1,6 @@
+IdKlienta lp int;
+DELETE from klienci where lp = 12;
+SELECT * FROM `klienci`
+INSERT INTO `klienci` (`lp`, `ImieKlienta`, `NazwiskoKlienta`, `OsobaKontaktowa`, `Adres`, `Miasto`, `KodPocztowy`, `Kraj`) VALUES ('12', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+update klienci set Kraj = '2024-14-12' where lp=12;
+SELECT COUNT(DISTINCT ImieKlienta) FROM klienci;
