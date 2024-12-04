@@ -1,0 +1,48 @@
+SELECT * FROM klienci LIMIT 5; 
+SELECT MAX(LP) FROM klienci WHERE 1; 
+SELECT MIN(LP) FROM klienci WHERE 1; 
+CREATE USER 'maciek'@'host' IDENTIFIED BY '123';
+GRANT ALL PRIVILEGES ON . TO 'maciek'@'localhost' WITH GRANT OPTION;
+CREATE USER 'maciek1'@'localhost' IDENTIFIED BY '123';
+DROP USER 'maciek'@'host';
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+REVOKE ALL PRIVILEGES ON . FROM 'maciek1'@'localhost'; 
+REVOKE GRANT OPTION ON . FROM 'maciek1'@'localhost'; 
+GRANT SELECT ON . TO 'maciek1'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE klienci CHANGE LP IdKlienta varchar(255); 
+SELECT AVG(IdKlienta) FROM klienci WHERE 1; 
+SELECT SUM(IdKlienta) FROM klienci WHERE 1; 
+SELECT COUNT(Kraj) FROM klienci WHERE Kraj = 'Polska';
+
+-odp ustna
+SELECT COUNT(DISTINCT(kraj)) FROM klienci WHERE 1;
+SELECT DISTINCT(imieKlienta) FROM klienci WHERE 1;
+SELECT * FROM `klienci` WHERE IdKlienta BETWEEN 2 AND 11 AND Miasto NOT LIKE ('%p%');
+SELECT * FROM `klienci` ORDER BY IdKlienta DESC;
+SELECT * FROM `klienci` WHERE Kraj NOT LIKE ("Francja") AND ImieKlienta NOT LIKE ('%a%');
+
+poprawa 1
+
+
+lekcja (nowe)
+SELECT IdKlienta, ImieKlienta FROM `klienci` WHERE ImieKlienta IS NOT NULL; 
+ALTER TABLE `klienci` ADD COLUMN auto varchar(255); 
+ALTER TABLE `klienci` ADD COLUMN data DATE FIRST; 
+ALTER TABLE `klienci` ADD COLUMN Ksywka TEXT AFTER NazwiskoKlienta; 
+ALTER TABLE `klienci` DROP COLUMN auto; 
+ALTER TABLE `klienci` CHANGE Ksywka haslo varchar(60); 
+UPDATE `klienci` SET ImieKlienta = 'Andrzej', NazwiskoKlienta = 'Duda' WHERE Kraj = 'Polska'; 
+DELETE FROM `klienci` WHERE Kraj='Niemcy'; 
+DELETE FROM `klienci` WHERE  NazwiskoKlienta LIKE '%d%'; 
+SELECT * FROM `klienci` WHERE data IS NOT NULL; 
+UPDATE `klienci` SET data = '2024.11.07' WHERE IdKlienta = 8; 
+
+
+
+ZADANIE
+
+1-3 TWORZENIE W PHPMYADMIN
+4. SELECT * FROM `jonkler`, `slizg`, `teamx` WHERE jonkler.Imie LIKE '%d%' OR slizg.Imie LIKE '%d%' OR teamx.Imie LIKE '%d%'; 
+5. SELECT * FROM `jonkler` WHERE Nazwisko BETWEEN '%d%' AND '%k'; 
+
