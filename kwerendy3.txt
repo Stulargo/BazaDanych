@@ -1,1 +1,24 @@
+alter table klienci add column NowyRok DATE after kraj
 
+W kolumnie nowyrok w wierszu 4,8,12 wprowadzic w 4 02.01.25 w 8 03.01.25 a w 12 04.01.25 a u pierwszego niemca w 4 wierszu
+zamienic imie na Helga
+UPDATE `klienci` SET `NowyRok`='2025-01-03' WHERE IdKlienta = '4';
+
+select max(idKlienta) from klienci;
+
+wyswietl idklienta imie osobakontaktowa miasto i sortowanie malejaco po miescie
+
+SELECT IdKlienta,ImieKlienta,OsobaKontaktowa,Miasto FROM `klienci`order by Miasto DESC;
+
+CREATE TABLE obywatel(id int not null PRIMARY KEY,imie varchar(255),nazwisko varchar(255),wiek int, adres varchar(255))
+CREATE TABLE obywatel(id int not null,imie varchar(255),nazwisko varchar(255),wiek int, adres varchar(255), PRIMARY KEY(id))
+
+CREATE table Human(id int NOT null,imie varchar(255) NOT null,nazwisko varchar(255),wiek int,adres varchar(255),CONSTRAINT PK_Human primary key (id,imie))
+
+	
+
+alter table klienci drop PRIMARY KEY
+
+dodaj do id klienta
+
+alter TABLE klienci add CONSTRAINT primary key(IdKlienta)
