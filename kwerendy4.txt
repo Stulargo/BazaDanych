@@ -1,0 +1,15 @@
+unikalne imionaKlient w postaci cyfry
+SELECT DISTINCT count(ImieKlienta) from klienci;
+na samym koncu kolumne date i w 8 wierszu dzisiejsze 
+
+nazwe z data na auto int 
+alter table klienci change data auto int;
+
+polaczyc kolumny imie nazwisko miasto i wyswietlic je w jednej kolumnie i nazwie czwartek
+select concat(ImieKlienta,' ',NazwiskoKlienta,' ',Miasto) as czwartek from klienci
+
+srednia zawartosc z idklienta
+
+
+create table tabelka(ID int not null PRIMARY KEY,Imie text, IdKlient int, FOREIGN KEY(IdKlient) REFERENCES klienci(IdKlienta));
+pierw fk i pk
