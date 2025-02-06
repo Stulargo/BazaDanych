@@ -28,5 +28,6 @@ INSERT INTO `zamowienia` (`IdKlienta`, `IdZamowienia`, `DataZamowienia`, `Wartos
 (11, 11, '2025-01-15', 544326, 'Wichita', 'USA'),
 (12, 12, '2025-01-15', 126342, 'Filadelfia', 'USA');
 
+select klienci.IdKlienta from klienci inner join zamowienia on klienci.IdKlienta= zamowienia.IdKlienta
 
 
