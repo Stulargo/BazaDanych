@@ -13,3 +13,8 @@ srednia zawartosc z idklienta
 
 create table tabelka(ID int not null PRIMARY KEY,Imie text, IdKlient int, FOREIGN KEY(IdKlient) REFERENCES klienci(IdKlienta));
 pierw fk i pk
+
+create table tabela(id int not null primary key,id1 int)
+
+
+create table tabela2(id1 int not null primary key,id int not null, foreign key (id1) REFERENCES tabela(id))
