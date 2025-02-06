@@ -1,0 +1,32 @@
+1. Wyswietl srednia wartosc kolumny idklienta
+select avg(IdKlienta) from klienci;
+2. Wyswietl wszystkich polakow,francuzow z litera 'a' w imieniu mieszkajacych w miescie z litera 'a' na samym koncu
+SELECT * FROM `klienci` where (Kraj="Polska" or Kraj="Francja") and ImieKlienta like "%a%" and Miasto like "%a%";
+3. Uzyj aliasu na imie i nazwisko i o nazwie dane
+select concat(ImieKlienta," ",NazwiskoKlienta) as dane from klienci;
+4. wyswietl wszystkich polakow lub niemcow ktorych imie zawiera sie miedzy literami 'd' i 'm' wlacznie
+SELECT * FROM `klienci` Where (Kraj="Polska" or Kraj="Niemcy") and ImieKlienta BETWEEN 'd' and 'm'
+5. W pierwszym wierszu pierwsze imie dac imie mieszko
+UPDATE `klienci` SET `ImieKlienta`= "Mieszko" where IdKlienta ="1"
+
+
+
+
+create table zamowienia(IdKlienta int,idZamowienia int,DataZamowienia date,WartoscZamowienia double,Miasto TEXT,Kraj text)
+
+INSERT INTO `zamowienia` (`IdKlienta`, `IdZamowienia`, `DataZamowienia`, `WartoscZamowienia`, `Miasto`, `Kraj`) VALUES
+(1, 1, '2025-01-15', 454, 'Białystok', 'Polska'),
+(2, 2, '2025-01-15', 764, 'Płock', 'Polska'),
+(3, 3, '2025-01-15', 951,'Łódź', 'Polska'),
+(4, 4, '2025-01-15', 2353, 'Frankfurt', 'Niemcy'),
+(5, 5, '2025-01-15', 3522, 'Saarbrucken', 'Niemcy'),
+(6, 6, '2025-01-15', 5432, 'Drezno ', 'Niemcy'),
+(7, 7, '2025-01-15', 54322, 'Paris', 'Francja'),
+(8, 8, '2025-01-15', 65432, 'Lyon', 'Francja'),
+(9, 9, '2025-01-15', 78544, 'Rennes', 'Francja'),
+(10, 10, '2025-01-15', 505232, 'Omaha ', 'USA'),
+(11, 11, '2025-01-15', 544326, 'Wichita', 'USA'),
+(12, 12, '2025-01-15', 126342, 'Filadelfia', 'USA');
+
+
+
