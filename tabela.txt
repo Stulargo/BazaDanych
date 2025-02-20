@@ -12,7 +12,7 @@ UPDATE `klienci` SET `ImieKlienta`= "Mieszko" where IdKlienta ="1"
 
 
 
-create table zamowienia(IdKlienta int,idZamowienia int,DataZamowienia date,WartoscZamowienia double,Miasto TEXT,Kraj text)
+create table zamowienia(IdKlienta int,idZamowienia int,DataZamowienia date,WartoscZamowienia double,Miasto TEXT,Kraj text);
 
 INSERT INTO `zamowienia` (`IdKlienta`, `IdZamowienia`, `DataZamowienia`, `WartoscZamowienia`, `Miasto`, `Kraj`) VALUES
 (1, 1, '2025-01-15', 454, 'Białystok', 'Polska'),
