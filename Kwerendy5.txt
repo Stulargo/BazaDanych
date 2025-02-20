@@ -1,0 +1,13 @@
+Zadanie 1 Wyswietlic wszystkie unikalne kraje cyfra
+select count(distinct(kraj)) from klienci;
+Zadanie 2 Na klientach i zamowieniach relacje i klucz glowny niech bedzie na idklienta w tabeli klienci a klucz obcy tabela zamowienia
+alter table klienci add primary key klucz (IdKlienta);
+alter table zamowienia add FOREIGN key klucz1 (IdKlienta) REFERENCES klienci(IdKlienta);
+Zadanie 3 Usun klucz obcy
+alter table zamowienia drop FOREIGN KEY klucz1;
+Zadanie 4 Zakladamy ze klienci to jest lewa tabela zamowienia to jest prawa tabela czyli chcemy zeby z klientow wyswietlic idklienta a z zamowien wartosc zamowienia
+select klienci.IdKlienta,zamowienia.WartoscZamowienia from klienci left join zamowienia on klienci.IdKlienta = zamowienia.IdKlienta
+Zadanie 5 za kolumna miasto w kliencie dodac kolumne o nazwie znaki i we calej tej kolumnie wprowadzic znaki "5I@<>"
+alter table klienci add column znaki varchar(20) after miasto;
+UPDATE `klienci` SET `znaki`='5i@<>' WHERE IdKlienta >=0 and IdKlienta<=12;
+
