@@ -10,3 +10,12 @@ alter TABLE zamowienia drop FOREIGN KEY obcy;
 alter table klienci drop PRIMARY KEY;
 5.Pierwszego niemca z id 4 ustawic mu imie Helga
 UPDATE `klienci` SET `IdKlienta`=4,`ImieKlienta`='Helga' where IdKlienta=4;
+
+
+
+select IdKlienta from klienci UNION select IdKlienta from zamowienia
+select IdKlienta,Miasto from klienci UNION select IdKlienta,Miasto from zamowienia;
+select IdKlienta,Miasto from klienci UNION select Miasto,IdKlienta from zamowienia;
+select IdKlienta,Miasto from klienci UNION select Miasto,wartoscZamowienia from zamowienia;
+
+
