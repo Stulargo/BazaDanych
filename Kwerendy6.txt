@@ -1,1 +1,12 @@
-
+1. Wyswietl imiona klientow malejaco
+select * from klienci order by imieKlienta desc;
+2.Lewa tabelka klienta a prawa zamowienia elementy wspolne szukac po miescie
+select * from klienci left join zamowienia on klienci.Miasto = zamowienia.Miasto
+3.W klientach id klucz glowny w zamowieniach id klucz obcy dodac relacje
+alter table klienci add primary key(IdKlienta);
+alter table zamowienia add CONSTRAINT obcy FOREIGN key(IdKlienta) REFERENCES klienci(IdKlienta)
+4. Usuniecie relacji 
+alter TABLE zamowienia drop FOREIGN KEY obcy;
+alter table klienci drop PRIMARY KEY;
+5.Pierwszego niemca z id 4 ustawic mu imie Helga
+UPDATE `klienci` SET `IdKlienta`=4,`ImieKlienta`='Helga' where IdKlienta=4;
