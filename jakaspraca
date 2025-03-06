@@ -1,0 +1,10 @@
+Utworz baze danych o nazwie DaneAdministracyjne 
+Utworz tabele o nazwie PolskieWojewództwa
+W tabeli z puntku 2 utwórz kolumny o nazwach NrId,NazwaWojewództwa,MiastoWojewódzkie,PowierzchniaWojewództwa,LiczbaMieszkancówWojewództwa. Typ kolumn dopasuj do przewidywanej zawartości Wprowadz dane do odpowiednich kolumn 
+Posortuj tabele malejaca pod wzgledem wielkosci terytorialnej wojewodztwa
+Wyswietl wszystkie wojewodztwa ktore nie sa nullami
+Na samym koncu tabeli dodaj kolumne o nazwie Kraj przy kazdym wojewodztwie z teh tabeli w kolumnie Kraj wpisz wartosc Polska 
+Zmien nazwe kolumny  Kraj na nową Nowa nazwa to Panstwo bez pl znakow i zmodyfikuj wszystkie wartosci na nowa o nazwie Poland 
+W tabeli klienci w wierszu idKlienta o numerze 1 w kolumnie Miasto wpisz Sopot W tabeli Zamowienia zrob dokladnie tak samo 
+Wyswietl cala lewa tabele Klienci i pasujac elementy z prawej Zamowienia Sprawdzaj Kolumne miasto
+Wyswietl po jednej kolumnie z tabel Klienci i Zamowienia Mozesz uzyc dowolych kolumn 
