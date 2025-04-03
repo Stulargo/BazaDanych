@@ -1,0 +1,6 @@
+gr.2
+
+1.Utworz 2 tabele z 3 kolumnami. Jedna z nich muysi przyjmowac liczby calkowite, a druga daty a trzecia znaki specjalne. Podczas tworzenia utworz klucze i stworz relacje pomiedzy dwoma tabelami
+2.Wypelnij 3 wiersze
+3.Usun relacje
+4.Usun tabele 
