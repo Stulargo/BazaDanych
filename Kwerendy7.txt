@@ -1,0 +1,14 @@
+wyswietlic wszystkich niemcow francuzow amerykanow i posortuj ich malejaco cala tabelke wedle miast
+select * from klienci where Kraj like 'Niemcy' || Kraj like 'Francja' || Kraj like 'USA' order by Miasto desc;
+
+Wyswietl wszystkie miasta z z zakresu id od 2 do 8 i ktorych imie klienta miesci sie w zakresie od a do p 
+select miasto from klienci where IdKlienta>1 && IdKlienta <9 &&ImieKlienta>'a' && ImieKlienta <'p'
+
+Wyswietl wszystkie z zamowien i klientow
+SELECT Miasto FROM `klienci` union all select miasto from zamowienia
+
+W zamowieniach update miasto o id 1 na warszawa w zamowieniach
+UPDATE `zamowienia` set Miasto='Warszawa' where IdKlienta=1
+
+Wyswietlic lewa tabele klienci i pasujace elementy a prawa zamowieniach sort po miastach
+SELECT klienci.*, zamowienia.* FROM `klienci` left join 'zamowienia' on klienci.Miasto = zamowienia.Miasto;
