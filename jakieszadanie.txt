@@ -1,6 +1,40 @@
 gr.2
 
 1.Utworz 2 tabele z 3 kolumnami. Jedna z nich muysi przyjmowac liczby calkowite, a druga daty a trzecia znaki specjalne. Podczas tworzenia utworz klucze i stworz relacje pomiedzy dwoma tabelami
+CREATE TABLE tabela1 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    liczba INT,
+    data DATE,
+    znak_specjalny CHAR(1)
+);
+
+CREATE TABLE tabela2 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    liczba INT,
+    data DATE,
+    znak_specjalny CHAR(1),
+    tabela1_id INT,
+    FOREIGN KEY (tabela1_id) REFERENCES tabela1(id)
+);
+
+
 2.Wypelnij 3 wiersze
+INSERT INTO tabela1 (liczba, data, znak_specjalny)
+VALUES (1, '2025-04-01', '@'),
+       (2, '2025-04-02', '#'),
+       (3, '2025-04-03', '$');
+
+INSERT INTO tabela2 (liczba, data, znak_specjalny, tabela1_id)
+VALUES (10, '2025-04-04', '&', 1),
+       (20, '2025-04-05', '*', 2),
+       (30, '2025-04-06', '%', 3);
+
+
 3.Usun relacje
+ALTER TABLE tabela2 DROP FOREIGN KEY tabela2_ibfk_1;
+
+
 4.Usun tabele 
+
+DROP TABLE tabela1;
+DROP TABLE tabela2;
